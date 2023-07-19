@@ -1,0 +1,103 @@
+Q:Return second word in Uppercase
+
+import java.io.*;
+import java.util.*;
+class UserMainCode
+{
+ public class UserMainCode
+ {
+ public string secondWordUpperCase(string input1)
+ {
+ String s[]=input1.split(" ");
+ if(s.length==1)
+ return "LESS";
+ String s1=s[1];
+ s1=s1.toUpperCase();
+ return s1;
+}
+}
+
+Q:is Palindrome (string)
+
+import java.io.*;
+import java.util.*;
+class UserMainCode
+{
+ public int isPalindrome(String input1){
+ input1=input1.toLowerCase();
+ int i,flag=1;
+ for(i=0;i<input1.length()/2;i++)
+ {
+ if(input1.charAt(i)!=input1.charAt(input1.length()-i-1))
+ {
+ flag=0;
+ break;
+ }
+ }
+ if(flag==0)
+ return 1;
+ return 2;
+ }
+ }
+
+ Q:weight of string
+
+import java.io.*;
+import java.util.*;
+class UserMainCode
+{
+ public int weightOfString(String input1,int input2){
+ String small="abcdefghijklmnopqrstuvwxyz";
+ int sum=0,i;
+ for(i=0;i<input1.length();i++)
+ {
+ if(input2==0)
+ {
+ char c=input1.charAt(i);
+ if(Character.isUpperCase(c))
+ c=Character.toLowerCase(c);
+ if(c!='a'&&c!='e'&&c!='i'&&c!='o'&&c!='u')
+ {
+ int index=small.indexOf(c);
+ if(index>=0)
+ sum+=index+1;
+ }
+ else
+ sum+=0;
+
+ }
+ else
+ {
+ char c=input1.charAt(i);
+ if(Character.isUpperCase(c))
+ c=Character.toLowerCase(c);
+ int index=small.indexOf(c);
+ if(index>=0)
+ sum+=index+1;
+ else
+ sum+=0;
+ }
+}
+ return sum;
+ }
+ }
+
+ Q:Most Frequent Digit
+
+  import java.io.*;
+  import java.util.*;
+  class UserMainCode
+   {
+   public class MostFrequentDigit {
+	 public static int getMostFrequestDigit(int input1, int input2, int input3, int input4) {
+		String allNo = String.valueOf(input1) + String.valueOf(input2) + String.valueOf(input3) + String.valueOf(input4);
+		int[] digitFrequency = new int[] {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; // 0-9
+		for (int i = 0; i < allNo.length(); i++) {
+			digitFrequency[Integer.parseInt(String.valueOf(allNo.charAt(i)))]++;
+		}
+		int mostFrequentDigit = 0;
+		for (int i = 0; i <= 9; i++) {
+			mostFrequentDigit 	= digitFrequency[i] >= digitFrequency[mostFrequentDigit] ? i : mostFrequentDigit;
+		}
+		return mostFrequentDigit;
+	 }
